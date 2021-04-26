@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogForm from './components/AddDialog/AddDialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -29,10 +28,6 @@ export default function FormDialog() {
   const handleClose = () => {
     setOpen(false);
   };
-  const handlePrintandClose = () =>{
-      
-      setOpen(false);
-  }
   const classes = useStyles();
   return (
   
@@ -44,16 +39,8 @@ export default function FormDialog() {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">ADD TRAINEE</DialogTitle>
         <DialogContent>
-          <DialogForm INTIAL_FORM_STATE = {INITIAL_FORM_STATE}/>
+          <DialogForm INTIAL_FORM_STATE = {INITIAL_FORM_STATE} clicked={handleClose}/>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handlePrintandClose} color="primary">
-            Submit
-          </Button>
-        </DialogActions>
       </Dialog>
     </div>
   );

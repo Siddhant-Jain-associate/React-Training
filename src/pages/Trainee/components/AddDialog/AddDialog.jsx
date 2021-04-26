@@ -152,9 +152,10 @@ const App = (props) => {
                                             }}
                                         />
                                     </Grid>
-                                    <Grid item xs={3}>
-                                        <Button type="submit">SUBMIT</Button>
-                                    </Grid>
+                                            
+                                        <Grid item xs={6}><Button variant='outlined' onClick={props.clicked}>Cancel</Button></Grid>
+                                        <Grid item xs={6}><Button type="submit">SUBMIT</Button></Grid>
+                                        
                                 </Grid>
                             </Form>
                         </Formik>

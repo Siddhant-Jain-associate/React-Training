@@ -9,7 +9,7 @@ import * as yup from 'yup';
 import TextField from '../../Components/FORMUI/TextField';
 import Button from '../../Components/FORMUI/Button';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
-
+import {Link} from 'react-router-dom';
 
 
 
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: 'auto',
       position: 'absolute',
-      top: '20%',
+      top: '10%',
       left: '33%',
       width: theme.spacing(50),
       height: theme.spacing(60),
@@ -75,8 +75,8 @@ export default function SimplePaper() {
 
   return (
     
-    <div className={classes.root}>
-      <Paper elevation={24}>
+    <div className={classes.root} >
+      <Paper elevation={10}>
 
         <AccountCircleIcon className={classes.Icon} color='secondary' />
         <h1 style={{ textAlign: 'center' }}>Login</h1>
