@@ -14,9 +14,12 @@ export default function ButtonAppBar() {
     <Router>
       
       <Switch>
+      <Route exact path="/">
+            <Redirect to="/login" />
+          </Route>
        
         <AuthLayout path='/login'><Login /></AuthLayout>
-        <PrivateLayout exact path='/'><Trainee /></PrivateLayout> 
+        <PrivateLayout path='/addtrainee'><Trainee /></PrivateLayout> 
         <PrivateLayout path="/inputdemo">Input Demo</PrivateLayout>
         <PrivateLayout path='/textfielddemo'><TextFielddemo /></PrivateLayout>
         <PrivateLayout path='/childrendemo'><ChildrenDemo /></PrivateLayout>
