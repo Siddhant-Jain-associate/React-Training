@@ -9,32 +9,41 @@ import * as yup from 'yup';
 import TextField from '../../Components/FORMUI/TextField';
 import Button from '../../Components/FORMUI/Button';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
-import {Link} from 'react-router-dom';
-
+import Footer from '../../layouts/components/Footer';
 
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       margin: 'auto',
-      position: 'absolute',
-      top: '10%',
-      left: '33%',
+    },
+  },
+  parent:{
+    position: 'relative',
+    margin:'auto',
       width: theme.spacing(50),
       height: theme.spacing(60),
-    },
   },
   Icon: {
     width: theme.spacing(8),
     height: theme.spacing(8),
-    marginLeft: '40%',
+    marginLeft: '43%',
     marginTop: '20px'
   },
   formWrapper: {
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(8),
   },
+   copyright:{
+     position:'absolute',
+     bottom:'0',
+     right:'0',
+     left:'0'
+   }
 
 }));
 
@@ -75,8 +84,8 @@ export default function SimplePaper() {
 
   return (
     
-    <div className={classes.root} >
-      <Paper elevation={10}>
+    <div className={classes.parent} >
+      <Paper elevation={10} className={classes.root} >
 
         <AccountCircleIcon className={classes.Icon} color='secondary' />
         <h1 style={{ textAlign: 'center' }}>Login</h1>
@@ -144,8 +153,11 @@ export default function SimplePaper() {
 
         </Grid>
 
+      <Footer className={classes.copyright} />
       </Paper>
+      
     </div>
+    
    
   );
 }
